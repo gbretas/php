@@ -9,6 +9,7 @@ function clean($str) {
 	return mysqli_real_escape_string($str);
 }
 
+//---------------------------------------------------------------------------
 // Generate an 8-character random password/string 
 //Usage: genPassword(NumberOfChars);
 
@@ -25,6 +26,7 @@ function genPassword($length = 8) {
     return $result;
 }
 
+//---------------------------------------------------------------------------
 // Function to send POST datas to website more easier
 // Full array go also return status of http
 //echo get_remote_data('http://example.com/');                                   //simple request
@@ -68,6 +70,7 @@ function get_remote_data($url, $post_paramtrs=false,$return_full_array=false)	{
 }
 
 
+//---------------------------------------------------------------------------
 // Uses PHP's filter_var to check for valid URL
 
 function isUrl($url) {
@@ -80,6 +83,7 @@ function isUrl($url) {
 	return $output;
 }
 
+//---------------------------------------------------------------------------
 //Security Level: AES 256
 //Encrypt the string
 //$encryptedString = encode("Encrypted");
@@ -97,6 +101,7 @@ function decode($text, $salt = SALT){
     return trim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, SALT, base64_decode($text), MCRYPT_MODE_ECB, mcrypt_create_iv(mcrypt_get_iv_size(MCRYPT_RIJNDAEL_256, MCRYPT_MODE_ECB), MCRYPT_RAND))); 
 }
 
+//---------------------------------------------------------------------------
 // Make hyperlinks by url
 // Usage: echo url_to_href('http://gbretas.com'); outputs <a href="http://gbretas.com">http://gbretas.com</a>
 function url_to_href($str) {
@@ -105,6 +110,7 @@ function url_to_href($str) {
     return preg_replace($pattern, $replace, $str);
 }
 
+//---------------------------------------------------------------------------
 // Check if email is valid
 // Usage: valid_email($email, $test_mx = Optional); 
 // TestMX is a function to test if Hostname exists :)
@@ -120,3 +126,5 @@ function valid_email($email, $test_mx = false) { /* checks if email address is v
 		return false;
 	}
 }
+
+//---------------------------------------------------------------------------
