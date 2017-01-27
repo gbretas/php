@@ -1,6 +1,6 @@
 <?php
 if (file_exists('./phpFunction.php')){
-	rename('./phpFunction.php', './backup.phpFunction.php');
+	unlink('./phpFunction.php');
 }
 
 $functions = glob('functions/*.php');
