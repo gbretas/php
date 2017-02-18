@@ -1,7 +1,6 @@
 <?php
 
 // Sanatize strings for databases & security
-<<<<<<< HEAD
 function clean_string($str) { 
 	if(get_magic_quotes_gpc()){
 		$str = stripslashes($str);
@@ -21,14 +20,6 @@ foreach ($_GET as $index => $value){
 }
 foreach ($_POST as $index => $value){
       $_POST[$index] = clean_string($value);
-=======
-function clean($str) { 
-  $str = @trim($str);
-	if(get_magic_quotes_gpc()) {
-		$str = stripslashes($str);
-	}
-	return mysqli_real_escape_string($str);
->>>>>>> 4a9f36469c08d21eda982dd18756cfc96879846f
 }
 
 //---------------------------------------------------------------------------
